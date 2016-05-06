@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import qt.com.queuetracker.CustomView.RoundImageView;
 import qt.com.queuetracker.Model.ServiceItem;
 import qt.com.queuetracker.R;
+import qt.com.queuetracker.ui.SelectServices;
 import qt.com.queuetracker.ui.SelectTime;
 
 /**
@@ -28,19 +30,12 @@ public class CircularAdapter extends BaseAdapter {
     private ArrayList<ServiceItem> service_itemlist;
     private static final String TAG = CircularAdapter.class.getSimpleName();
     Context mContext;
-    int actual_size;
-    int middle_point;
 
-    boolean checkCountBoolean=true;
-
-    int incrementCounter,tempCounter=0,startCounter=0;
 
     public CircularAdapter(Context context, ArrayList<ServiceItem> service_itemlist) {
         this.mContext = context;
         this.service_itemlist = service_itemlist;
-        this.actual_size = service_itemlist.size();
-        middle_point = service_itemlist.size() / 2;
-//        this.serviceIcon = ls_ServiceIcons;
+
     }
 
     @Override
@@ -62,58 +57,25 @@ public class CircularAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
 
-        LayoutInflater mInflater = (LayoutInflater)
+        final LayoutInflater mInflater = (LayoutInflater)
                 mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        if (convertView == null) {
+        //  if (convertView == null) {
 
-            convertView = mInflater.inflate(R.layout.circular_list_item, null);
-            holder = new ViewHolder();
-            holder.service_name = (TextView) convertView.findViewById(R.id.service_name);
+        convertView = mInflater.inflate(R.layout.circular_list_item, null);
+        holder = new ViewHolder();
+        holder.service_name = (TextView) convertView.findViewById(R.id.service_name);
 
-            holder.service_img = (RoundImageView) convertView.findViewById(R.id.service_img);
-
-
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
-        }
-
-        holder.service_name.setVisibility(View.VISIBLE);
-        holder.service_img.setVisibility(View.VISIBLE);
+        holder.service_img = (RoundImageView) convertView.findViewById(R.id.service_img);
 
 
-        ServiceItem rowItem = service_itemlist.get(position);
+        convertView.setTag(holder);
+//        } else {
+//            holder = (ViewHolder) convertView.getTag();
+//        }
 
-        int center_Point=service_itemlist.size()/rowItem.getCount();
 
-        int count=Math.round(center_Point);
-
-        Toast.makeText(mContext,""+count,Toast.LENGTH_SHORT).show();
-
-/*        if (position >= rowItem.getCount()) {
-
-            holder.service_name.setVisibility(View.INVISIBLE);
-            holder.service_img.setVisibility(View.INVISIBLE);
-        }*/
-        incrementCounter=rowItem.getCount();
-        if (position>=count && startCounter==0)
-        {
-            holder.service_name.setVisibility(View.VISIBLE);
-            holder.service_img.setVisibility(View.VISIBLE);
-
-            if (tempCounter<=incrementCounter)
-            {
-                tempCounter++;
-                if (tempCounter==incrementCounter)
-                    startCounter=1;
-            }
-
-        }
-        else
-        {
-            holder.service_name.setVisibility(View.INVISIBLE);
-            holder.service_img.setVisibility(View.INVISIBLE);
-        }
+        final ServiceItem rowItem = service_itemlist.get(position);
+        if (!rowItem.getEmpty()) {
 
             holder.service_name.setText(rowItem.getService_name());
 
@@ -125,14 +87,25 @@ public class CircularAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, SelectTime.class);
+                    Bundle bundle = new Bundle();
+
+
+                    bundle.putString("branch_id", SelectServices.branch_id);
+                    bundle.putString("company_id", SelectServices.companyid);
+                    bundle.putString("service_id", rowItem.getService_id());
+
+                    intent.putExtras(bundle);
                     mContext.startActivity(intent);
+//                    mContext.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+
+
+
                 }
             });
-
+        }
 
         return convertView;
     }
-
 
     /*private view holder class*/
     private class ViewHolder {
