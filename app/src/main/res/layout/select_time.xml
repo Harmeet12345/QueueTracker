@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/steps_layout"
+        android:layout_gravity="center"/>
+    <Switch
+        android:id="@+id/time_sift_selection_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/image_margin"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:thumb="@drawable/switch_bg"
+        android:track="@drawable/track_bg" />
+
+    <!-- <qt.com.queuetracker.helper.ToggleSwitch
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />-->
+
+    <LinearLayout
+        android:id="@+id/digitalcloclayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time_sift_selection_switch"
+        android:layout_centerHorizontal="true"
+        android:weightSum="2"
+        android:gravity="center_vertical"
+        android:background="@drawable/red_timebar"
+        android:layout_margin="@dimen/layout_margin_10" >
+
+        <EditText
+            android:id="@+id/choosetime"
+            android:layout_width="0dp"
+
+            android:layout_height="wrap_content"
+            android:text="@string/time_text"
+            android:layout_weight="1"
+            android:background="@null"
+            android:inputType="number"
+            android:maxLength="2"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/layout_margin_10"
+            android:textColor="#ff0033"
+            android:textSize="@dimen/text_size_30" />
+
+        <include layout="@layout/colon"/>
+
+
+        <TextView
+            android:id="@+id/ampm"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="@string/time_shift"
+            android:layout_marginLeft="3dp"
+            android:textColor="#ff0033"
+            android:textSize="@dimen/text_size_30" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/clock_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"></LinearLayout>
+
+
+     <!--<qt.com.queuetracker.helper.ClockHour
+         android:id="@+id/clock_hour"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"/>-->
+
+
+</LinearLayout>

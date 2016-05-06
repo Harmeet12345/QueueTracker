@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+
+   <include
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       layout="@layout/steps_layout"
+       android:layout_gravity="center"/>
+
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/image_margin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/searchbar_small"
+            android:contentDescription="@string/app_name"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/txt_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/image_margin"
+            android:background="@null"
+            android:singleLine="true"
+            android:drawableLeft="@drawable/search_small"
+            android:drawablePadding="@dimen/small_margin"
+            android:hint="@string/search"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/hint_text_size" />
+
+
+        <ImageView
+            android:id="@+id/img_Search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/image_margin"
+            android:src="@drawable/search_white"
+            android:contentDescription="@string/app_name"/>
+
+        <ImageView
+            android:id="@+id/img_Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/image_margin"
+            android:src="@drawable/locate"
+            android:visibility="gone"
+            android:contentDescription="@string/app_name"/>
+
+    </FrameLayout>
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/image_margin"
+        android:gravity="center"
+        android:horizontalSpacing="@dimen/small_margin"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+
+
+        android:verticalSpacing="@dimen/small_margin" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/image_margin"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/divider_margin"
+        android:visibility="gone" />
+
+</LinearLayout>

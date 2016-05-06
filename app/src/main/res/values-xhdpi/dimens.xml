@@ -1,0 +1,32 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="image_text_size">30sp</dimen>
+    <dimen name="hint_text_size">25sp</dimen>
+    <dimen name="text_size_10">10sp</dimen>
+    <dimen name="image_margin">17dp</dimen>
+    <dimen name="small_margin">10dp</dimen>
+    <dimen name="very_small_margin">5dp</dimen>
+    <dimen name="layout__margin_7">8dp</dimen>
+    <dimen name="company_logo_size">50dip</dimen>
+    <dimen name="divider_margin">2dip</dimen>
+    <dimen name="layout_margin_20">20dip</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_30">30sp</dimen>
+    <dimen name="layout_margin_10">10dp</dimen>
+    <dimen name="layout_margin_15">15dp</dimen>
+    <dimen name="circular_listVw_width">350dp</dimen>
+    <dimen name="rounded_image_size">80dp</dimen>
+    //
+    <dimen name="padding_10dp">10dp</dimen>
+    <dimen name="text_size_50">50sp</dimen>
+    <dimen name="layout_marginTop_10">10dp</dimen>
+    <dimen name="layout_marginTop_5">5dp</dimen>
+
+
+
+
+
+
+
+
+</resources>

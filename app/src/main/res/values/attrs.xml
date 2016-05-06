@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="firstColor" format="reference" />
+    <attr name="secondColor" format="reference" />
+    <attr name="circleWidth" format="dimension" />
+    <attr name="dotCount" format="integer" />
+    <attr name="splitSize" format="integer" />
+    <attr name="bg" format="reference"></attr>
+
+    <declare-styleable name="ClockHour">
+        <attr name="firstColor" />
+        <attr name="secondColor" />
+        <attr name="circleWidth" />
+        <attr name="dotCount" />
+        <attr name="splitSize" />
+        <attr name="bg" />
+    </declare-styleable>
+
+    <attr name="SwitchStyle" format="reference" />
+    <declare-styleable name="Switch">
+        <attr name="textLeft" format="string" />
+        <attr name="textRight" format="string" />
+        <attr name="SwitchMinWidth" format="dimension" />
+        <attr name="SwitchPadding" format="dimension" />
+        <attr name="colorUnChecked" format="color" />
+        <attr name="colorChecked" format="color" />
+        <attr name="backgroundDrawable" format="reference" />
+        <attr name="switchDrawable" format="dimension" />
+        <attr name="innerPadding" format="dimension" />
+        <attr name="isChecked" format="boolean" />
+    </declare-styleable>
+
+    <!--<declare-styleable name="AnalogClock">-->
+        <!--<attr name="dial" format="reference"/>-->
+        <!--<attr name="hand_hour" format="reference"/>-->
+        <!--<attr name="hand_minute" format="reference"/>-->
+    <!--</declare-styleable>-->
+
+
+
+        <declare-styleable name="CircularImageView">
+            <attr name="civ_border" format="boolean"/>
+            <attr name="civ_border_width" format="dimension"/>
+            <attr name="civ_border_color" format="color"/>
+            <attr name="civ_shadow" format="boolean"/>
+            <attr name="civ_shadow_color" format="color"/>
+            <attr name="civ_shadow_radius" format="float"/>
+        </declare-styleable>
+
+
+
+</resources>

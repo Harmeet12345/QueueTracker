@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/tv_ticketno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/layout_marginTop_10"
+        android:text="@string/tv_ticketno"
+        android:textSize="@dimen/text_size_30" />
+
+    <TextView
+        android:id="@+id/tv_generated_ticketno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_ticketno"
+        android:layout_centerHorizontal="true"
+        android:text="@string/tv_generated_ticketno"
+        android:textSize="@dimen/text_size_50"
+        android:textStyle="bold" />
+
+
+    <qt.com.queuetracker.helper.Clock_Hour_Minute
+        android:id="@+id/clock_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/layout_margin_20"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_digitalclock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clock_view"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/layout_marginTop_5"
+        android:text="@string/tv_digitalclock"
+        android:textSize="@dimen/text_size_30" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/layout_margin_20"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/im_waitTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="clip_vertical"
+                android:layout_marginLeft="@dimen/very_small_margin"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/man_2" />
+
+            <LinearLayout
+                android:id="@+id/waiting_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:layout_gravity="center_horizontal|top"/>
+
+            <!--<qt.com.queuetracker.helper.WaitingTimeClock-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="47dp"-->
+                <!--android:layout_gravity="center_horizontal|top" />-->
+
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/im_locate_chart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/locate_chart" />
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/serve_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:layout_gravity="right|top"/>
+
+         <!--   <qt.com.queuetracker.helper.WaitingTimeClock
+                android:layout_width="wrap_content"
+                android:layout_height="47dp"
+                android:layout_gravity="right|top" />-->
+
+            <ImageView
+                android:id="@+id/im_serve_timer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginLeft="@dimen/very_small_margin"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/man_sitting" />
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/steps_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+
+    <LinearLayout
+        android:id="@+id/ly_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/image_margin"
+        android:layout_marginRight="@dimen/image_margin"
+        android:weightSum="1">
+
+
+        <ImageView
+            android:id="@+id/img_Logo"
+            android:layout_width="@dimen/rounded_image_size"
+            android:layout_height="@dimen/rounded_image_size"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/very_small_margin"
+            android:layout_weight=".1"
+            android:background="@drawable/square_border"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/txt_LogoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/image_margin"
+            android:layout_weight=".9"
+            android:text="@string/post_bank"
+            android:textColor="@color/Black"
+            android:textSize="@dimen/hint_text_size" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/image_margin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/searchbar_small" />
+
+        <AutoCompleteTextView
+            android:id="@+id/location_search_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/image_margin"
+            android:background="@null"
+            android:drawableLeft="@drawable/search_small"
+            android:drawablePadding="@dimen/small_margin"
+            android:hint="@string/search"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/hint_text_size" />
+
+
+        <ImageView
+            android:id="@+id/img_Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/image_margin"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/locate" />
+
+    </FrameLayout>
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/very_small_margin"
+        android:dividerHeight="@dimen/divider_margin" />
+
+</LinearLayout>
